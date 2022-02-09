@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import StyledC from './StyledC';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+  {/* <StyledC/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

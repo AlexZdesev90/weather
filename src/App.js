@@ -35,12 +35,13 @@ function App() {
 
   return (
     <div className="App">
-      <input type="text" placeholder="city" onKeyPress={search} onChange={(e) => setQuery(e.target.value)} value={query} />
-      {(typeof weather.main !== 'undefined') ? (<div><div>{weather.name}, {weather.sys.country}</div>
-      <div>{dateBuilder(new Date())}</div>
-        <div>{Math.round(weather.main.temp)}{'\xB0'}</div>
-      <div>{weather.weather[0].main}</div></div>) : null}
-     
+      
+      <input className="inpt" type="text" placeholder="..." onKeyPress={search} onChange={(e) => setQuery(e.target.value)} value={query} />
+      {(typeof weather.main !== 'undefined') ? (<div className="container"><div className="el el1"><div>{weather.name}, {weather.sys.country}</div></div>
+      <div className="el el2">{dateBuilder(new Date())}</div>
+        <div className="el el3">{Math.round(weather.main.temp)}{'\xB0'}</div>
+      <div className="el el4">{weather.weather[0].main}</div></div>) : null}
+      
     </div>
   );
 }
