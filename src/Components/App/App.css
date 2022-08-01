@@ -1,0 +1,133 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("https://img.freepik.com/free-photo/grey-geometrical-shapes-background_23-2148811539.jpg?w=996&t=st=1659208058~exp=1659208658~hmac=f54a6e10f9e7e0e4ea784c5aa6603f8dd100fd9051ca4daec72ed2c0d0888bf9");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.app {
+  background: #616161;
+  background: -webkit-linear-gradient(to right, #9bc5c3, #944a4a);
+  background: linear-gradient(to right, #9bc5c3, #616161);
+  box-shadow: 2px 2px 4px black;
+  border-radius: 15px;
+  width: 60%;
+  margin: 0.5rem auto;
+  height: 80vh;
+}
+
+.input {
+  padding-top: 1rem;
+  width: 88%;
+  margin: 0 auto;
+}
+
+.input input {
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: whitesmoke;
+  width: 100%;
+}
+
+.content {
+  font-size: 26px;
+  display: grid;
+  justify-content:center;
+  align-content: center;
+  margin: 0.5rem auto;
+  align-items: center;
+  text-align: center;
+  gap: 1rem 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 100px 130px 100px;
+  padding: 10px;
+}
+
+.city_name,
+.date,
+.prediction_image,
+.temp_maxmin {
+    color: whitesmoke;
+    text-shadow: 2px 2px 1px black;
+    margin: 2px auto;
+    height: 90%;
+    padding: 1.5rem 1.5rem;
+    background-color: #616161;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+}
+
+
+.image {
+  background: url("https://img.freepik.com/free-vector/cute-smiling-sun-with-clouds-sticker-design-element-vector_53876-164996.jpg?w=740&t=st=1659211105~exp=1659211705~hmac=e7f65a13344e07c2024e61a98fd2816c4a7d034aeefd30d9fe7edd25bad81614");
+  background-size: cover;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.image2 {
+  background: url("https://img.freepik.com/free-vector/winter-snowflake-illustration-blue-background-set_53876-120770.jpg?w=740&t=st=1659213077~exp=1659213677~hmac=298d54275ebb4164c97fa164048cc86cf9455f4ca8df9fa46f303b3227eaa943");
+  background-size: cover;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.info_container{
+  position: absolute;
+  left: 10px;
+  top: 70px;
+  z-index: 12;
+}
+
+.inner {
+  background: white;
+  padding: 0.5m;
+  border-radius: 10px;
+  width: 100px;
+  clip-path: circle(12% at 90% 43%);
+  transition: all 0.4s linear;
+  cursor: pointer;
+}
+
+.inner:hover{
+  clip-path: circle(75%);
+  width:100px;
+  background: rgb(9, 151, 246);
+}
+
+span {
+  font-size: 20px;
+  float: right;
+  color:rgb(9, 151, 246);
+  font-weight: bold;
+  transition: color(0.5s);
+  position: relative;
+  margin-right: 7%;
+  margin-top: 5%;
+}
+
+.sp:hover{
+  opacity: 0;
+}
+
+/* span:hover {
+  opacity: 0;
+} */
+
+h6{
+  color: #ffffff;
+  padding: 8px;
+  margin: 5px;
+}
