@@ -62,7 +62,7 @@ const App = () => {
     const month = Month[date.getMonth()];
     const day = date.getDate();
     const digit = Day[date.getDay()];
-    return `${digit} : ${month} ${day} ${year}`;
+    return `${digit} ${month} ${day} ${year}`;
   };
 
   return (
@@ -75,7 +75,7 @@ const App = () => {
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={getWeather}
           />
-          <div className="buttons"><button onClick={setThemeLight}>Light</button><button onClick={setThemeDark}>Dark</button><div className="theme_name">{theme === "light" ? "LIGHT" : "DARK"}</div></div>
+          <div className="buttons"><button onClick={setThemeLight}>Light</button><button onClick={setThemeDark}>Dark</button><div className="theme_name">{theme === "light" ? "LIGHT THEME" : "DARK THEME"}</div></div>
         </div>
         <div className="app">
           {typeof prediction.main !== "undefined" ? (

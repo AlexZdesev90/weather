@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300');
+
+*,
+.body{
+  font-family: 'Roboto', sans-serif;
+}
+
 .AppContent {
   background-color: var(--background-color);
   color: var(--colors-text);
-  transition: background-color 800ms linear, color 800ms linear;
+  transition: background-color 600ms linear, color 800ms linear;
   height: 100vh;
   
 }
@@ -9,15 +16,27 @@
 .app {
   position: relative;
   background: url("https://images.wallpaperscraft.ru/image/single/kaktus_rastenie_minimalizm_170029_7879x5120.jpg");
-  filter: var(--filter);
   background-size: cover;
   box-shadow: 2px 2px 4px black;
   border-radius: 15px;
   width: 50%;
-  height: 80%;
+  height: 70%;
   margin: 0.5rem auto;
   transition: filter 1000ms linear;
   z-index: 1;
+}
+
+.app::before {
+  content: '';
+  position: absolute;
+  border-radius: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: var(--opacity);
+  transition: background 100ms linear;
 }
 
 .input {
@@ -29,6 +48,7 @@
 }
 
 .input input {
+  font-size: 40px;
   color: white;
   padding: 1rem;
   border-radius: 10px;
@@ -38,6 +58,7 @@
   background-color: var(--background-input);
   width: 100%;
   transition: background-color 600ms linear;
+  cursor: pointer;
 }
 
 .content {
@@ -48,13 +69,13 @@
   justify-content: center;
   align-content: center;
   margin: 0rem auto;
-  justify-items: center;
+  justify-items: center; 
   align-items: center;
   text-align: center;
-  gap: 0.1rem 0.1rem;
+  gap: 1rem 1rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  padding: 10px;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 4rem;
 }
 
 .city_name,
@@ -64,15 +85,31 @@
 .temp_min,
 .temp {
   position: relative;
-  margin: 20px auto;
-  padding: 0.5rem 1.5rem;
+  margin: auto;
   background-color: var(--background-predictions);
   box-shadow: 2px 2px 4px black;
   border-radius: 10px;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   transition: background-color 800ms linear;
-  z-index: 2;
+  z-index: 40;
+  cursor:pointer;
+}
+
+.city_name:hover,
+.date:hover,
+.prediction_image:hover,
+.temp_max:hover,
+.temp_min:hover,
+.temp:hover {
+  background-color: var(--background-predictions-hover);
+  animation: hover 0.5s;
+}
+
+@keyframes hover {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.05)}
+  100% {transform: scale(1);}
 }
 
 .image {
@@ -126,7 +163,7 @@ span {
   transition: color(0.5s);
   position: relative;
   margin-right: 7%;
-  margin-top: 5%;
+  margin-top: 6%;
 }
 
 .sp:hover {
@@ -148,7 +185,7 @@ h6 {
   right: 0;
   margin: 5px;
   padding: 5px;
-  background-color: rgb(95, 25, 25);
+  background-color: rgb(95, 89, 63);
   border-radius: 10px;
 }
 
@@ -156,10 +193,12 @@ h6 {
   border-radius:10px;
   width: 60px;
   border: none;
+  background-color: rgb(184, 28, 184);
+  color: white;
 }
 
 .buttons button:hover {
-  background-color: pink;
+  background-color: rgb(136, 29, 136);
 }
 
 .theme_name {
