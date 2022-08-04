@@ -1,79 +1,90 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-body {
-  background: url("https://img.freepik.com/free-photo/grey-geometrical-shapes-background_23-2148811539.jpg?w=996&t=st=1659208058~exp=1659208658~hmac=f54a6e10f9e7e0e4ea784c5aa6603f8dd100fd9051ca4daec72ed2c0d0888bf9");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
+.AppContent {
+  background-color: var(--background-color);
+  color: var(--colors-text);
+  transition: background-color 800ms linear, color 800ms linear;
   height: 100vh;
+  
 }
 
 .app {
-  background: #616161;
-  background: -webkit-linear-gradient(to right, #9bc5c3, #944a4a);
-  background: linear-gradient(to right, #9bc5c3, #616161);
+  position: relative;
+  background: url("https://images.wallpaperscraft.ru/image/single/kaktus_rastenie_minimalizm_170029_7879x5120.jpg");
+  filter: var(--filter);
+  background-size: cover;
   box-shadow: 2px 2px 4px black;
   border-radius: 15px;
-  width: 60%;
+  width: 50%;
+  height: 80%;
   margin: 0.5rem auto;
-  height: 80vh;
+  transition: filter 1000ms linear;
+  z-index: 1;
 }
 
 .input {
+  display:grid;
+  grid-template-columns:1fr 180px;
   padding-top: 1rem;
-  width: 88%;
   margin: 0 auto;
+  margin-left: 140px;
 }
 
 .input input {
+  color: white;
   padding: 1rem;
   border-radius: 10px;
   border: none;
   outline: none;
   font-size: 18px;
-  background: whitesmoke;
+  background-color: var(--background-input);
   width: 100%;
+  transition: background-color 600ms linear;
 }
 
 .content {
+/* 
+  background-repeat: no-repeat; */
   font-size: 26px;
   display: grid;
-  justify-content:center;
+  justify-content: center;
   align-content: center;
-  margin: 0.5rem auto;
+  margin: 0rem auto;
+  justify-items: center;
   align-items: center;
   text-align: center;
-  gap: 1rem 1rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100px 100px 130px 100px;
+  gap: 0.1rem 0.1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
   padding: 10px;
 }
 
 .city_name,
 .date,
 .prediction_image,
-.temp_maxmin {
-    color: whitesmoke;
-    text-shadow: 2px 2px 1px black;
-    margin: 2px auto;
-    height: 90%;
-    padding: 1.5rem 1.5rem;
-    background-color: #616161;
-    box-shadow: 2px 2px 4px black;
-    border-radius: 10px;
+.temp_max,
+.temp_min,
+.temp {
+  position: relative;
+  margin: 20px auto;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--background-predictions);
+  box-shadow: 2px 2px 4px black;
+  border-radius: 10px;
+  height: 80%;
+  width: 80%;
+  transition: background-color 800ms linear;
+  z-index: 2;
 }
 
-
 .image {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
   background: url("https://img.freepik.com/free-vector/cute-smiling-sun-with-clouds-sticker-design-element-vector_53876-164996.jpg?w=740&t=st=1659211105~exp=1659211705~hmac=e7f65a13344e07c2024e61a98fd2816c4a7d034aeefd30d9fe7edd25bad81614");
   background-size: cover;
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  
 }
 
 .image2 {
@@ -84,15 +95,15 @@ body {
   height: 50px;
 }
 
-.info_container{
+.info_container {
   position: absolute;
-  left: 10px;
-  top: 70px;
+  left: 30px;
+  top: 10px;
   z-index: 12;
 }
 
 .inner {
-  background: white;
+  background: var(--icon-bg);
   padding: 0.5m;
   border-radius: 10px;
   width: 100px;
@@ -101,16 +112,16 @@ body {
   cursor: pointer;
 }
 
-.inner:hover{
+.inner:hover {
   clip-path: circle(75%);
-  width:100px;
+  width: 100px;
   background: rgb(9, 151, 246);
 }
 
 span {
   font-size: 20px;
   float: right;
-  color:rgb(9, 151, 246);
+  color: rgb(9, 151, 246);
   font-weight: bold;
   transition: color(0.5s);
   position: relative;
@@ -118,7 +129,7 @@ span {
   margin-top: 5%;
 }
 
-.sp:hover{
+.sp:hover {
   opacity: 0;
 }
 
@@ -126,8 +137,34 @@ span {
   opacity: 0;
 } */
 
-h6{
+h6 {
   color: #ffffff;
   padding: 8px;
   margin: 5px;
+}
+
+.buttons {
+  position: absolute;
+  right: 0;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgb(95, 25, 25);
+  border-radius: 10px;
+}
+
+.buttons button {
+  border-radius:10px;
+  width: 60px;
+  border: none;
+}
+
+.buttons button:hover {
+  background-color: pink;
+}
+
+.theme_name {
+  text-align: center;
+  margin: auto;
+  color: palevioletred;
+
 }

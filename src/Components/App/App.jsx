@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import { useTheme } from "../../use-theme";
 
 const api = {
   key: "95dcccab70174fc2926a2e3be7f6a95a",
@@ -7,6 +8,8 @@ const api = {
 };
 
 const App = () => {
+
+  const { theme, setTheme } = useTheme();
   const [query, setQuery] = useState("");
   const [prediction, setPrediction] = useState({});
 
@@ -21,6 +24,14 @@ const App = () => {
       console.log(res);
     }
   };
+
+  let setThemeLight = () => {
+    setTheme("light")
+  }
+
+  let setThemeDark = () => {
+    setTheme("dark")
+  }
 
   const Month = [
     "January",
@@ -56,15 +67,15 @@ const App = () => {
 
   return (
     <>
-      <div>
+      <div className="AppContent">
         <div className="input">
           <input
             type="text"
-            placeholder="City"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={getWeather}
           />
+          <div className="buttons"><button onClick={setThemeLight}>Light</button><button onClick={setThemeDark}>Dark</button><div className="theme_name">{theme === "light" ? "LIGHT" : "DARK"}</div></div>
         </div>
         <div className="app">
           {typeof prediction.main !== "undefined" ? (
@@ -78,20 +89,24 @@ const App = () => {
                   prediction.main.temp > 0 ? (
                     <div className="image_temp">
                       <div className="image"></div>
-                      <div>{Math.round(prediction.main.temp)}</div>
+                      
                     </div>
                   ) : (
                     <div className="image_temp">
                       <div className="image2"></div>
-                      <div>{Math.round(prediction.main.temp)}</div>
                     </div>
                   )
                 ) : null}
               </div>
-              <div className="temp_maxmin">
+              <div className="temp">{Math.round(prediction.main.temp) + '\xB0'}</div>
+              <div className="temp_min">
                 <div>
-                  Min: {Math.round(prediction.main.temp_min)} Max:{" "}
-                  {Math.round(prediction.main.temp_max)}{" "}
+                  Min: {Math.round(prediction.main.temp_min) + '\xB0'} 
+                </div>
+              </div>
+              <div className="temp_max">
+                <div>
+                  Max: {Math.round(prediction.main.temp_max) + '\xB0'} 
                 </div>
               </div>
             </div>
