@@ -25,7 +25,7 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
   --colors-text: rgb(172, 184, 199);
   --background-color: rgb(3, 12, 77);
-  --background-input: rgb(110, 108, 131);
+  --background-input: rgb(156, 170, 170);
   --background-predictions:rgba(16, 128, 122, 0.75);
   --background-predictions-hover:rgba(16, 88, 122, 0.75);
   /* --filter: brightness(55%); */
